@@ -32,7 +32,7 @@ def sent_tok(doc):
 wiki = {}
 passage_name = {'0': 'Introduction', '1': 'Scene 1', '2': 'Scene 2', '3': 'Scene 3'}
 lll = []
-for file in tqdm(all_file('datasets-CMU_DoG-master/WikiData')):
+for file in tqdm(all_file('dataset/cmu/WikiData')):
     item = json.load(open(file))
     intro = item['0']
     movie = intro['movieName']
@@ -50,7 +50,7 @@ print(sum(lll) / len(lll))
 
 saved = []
 dialog_id = 0
-for file in tqdm(all_file('datasets-CMU_DoG-master/Conversations/test')):
+for file in tqdm(all_file('dataset/cmu/Conversations/train')):
     # item = {'id':'CMU_DoG', }
     data = json.load(open(file))
     knowledge = wiki[data['wikiDocumentIdx']]
@@ -94,4 +94,4 @@ for file in tqdm(all_file('datasets-CMU_DoG-master/Conversations/test')):
             saved.append(item)
     dialog_id += 1
 
-json.dump(saved, open('test.json', 'w'))
+json.dump(saved, open('dataset/cmu/train.json', 'w'))

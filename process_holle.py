@@ -350,7 +350,7 @@ class HolleDatasetReader:
 
 
 def main():
-    raw_data = json.load(open('dataset/holle/test_data.json'))
+    raw_data = json.load(open('dataset/holle/main_data/test_data.json'))
     # multi_ref = json.load(open('dataset/holle/multi_reference_test.json'))
     agent = HolleDatasetReader(raw_data, datatype='valid')
 
@@ -361,7 +361,7 @@ def main():
         for turn in session:
             data.append(turn)
     print(len(data))
-    # json.dump(data, open('dataset/holle/test.json', 'w'))
+    json.dump(data, open('dataset/holle/test.json', 'w'))
 
     # for i in range(100):
     #     for j in range(0, 100):

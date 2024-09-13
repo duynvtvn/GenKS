@@ -252,7 +252,7 @@ def main():
     model.resize_token_embeddings(len(tokenizer))
     # tokenizer.pad_token = '<pad>'
 
-    data = json.load(open('dataset/wizard/train.json'))
+    data = json.load(open('dataset/cmu/train.json'))
     psg_filter = None
     print('Data: ', len(data))
     dataset = GPTData(data, tokenizer, psg_filter=psg_filter, context_len=128, sent_len=64, max_length=512,

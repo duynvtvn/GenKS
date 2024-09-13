@@ -205,7 +205,7 @@ class WizardDialogKnowledgeTeacher:
 
 
 def main():
-    raw_data = json.load(open('dataset/raw/test_random_split.json'))
+    raw_data = json.load(open('dataset/wizard/train.json'))
     agent = WizardDialogKnowledgeTeacher(raw_data, datatype='train')
     total = 0
     num = 0
